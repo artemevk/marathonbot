@@ -9,25 +9,21 @@ token = '1318094188:AAEpy6lDo4Ld5FwPyvY6vQGDsncVKGvo148'
 owner_id = 242076979
 
 # ID чата в который отправлять сообщения
-ID_chat = -1001205176666
+chat_id = -1001480357109
 
 # День начала марафона
-start_day = '08.10.2020'
+start_day = '09.10.2020'
 
 # День окончания марафона
-finish_day = '11.10.2020'
-
-# Час отправки сообщения о готовности владельцу
-readiness_hour = 8
+finish_day = '12.10.2020'
 
 # Час отправки сообщений в чат
-# send_hour = 30 # раскомменитровать для тестирования
-send_hour = 10 # закомментировать для тестирования
+send_hour = 10
 
 # Ссылки на материалы - (одна ссылка = один день)
 links = [['https://yadi.sk/d/pN4VURbpttmJnw', 'https://yadi.sk/i/xCbt-CkKMutgIA', 
           'https://yadi.sk/d/K3d3uroPcC78OA', 'https://yadi.sk/i/BVn4QqGrroAEDQ'],
-         ['https://yadi.sk/d/scW105GwB_itbA', 'https://yadi.sk/d/UyQY_L0B-3sUDA',
+         ['https://yadi.sk/d/scW105GwB_itbA', 'https://yadi.sk/d/aJdFuz9VKJ3gfQ',
           'https://yadi.sk/d/MPVk50xbZfDWSw', 'https://yadi.sk/d/WD7_7yoj-sSkSA',
           'https://yadi.sk/d/iPgkYrRUEOam0w', 'https://yadi.sk/d/WJQnFHNyuCKiRA', 
           'https://yadi.sk/d/UeCyy1oeTFg4ag', 'https://yadi.sk/i/WwWZ49U1syuu-w',
