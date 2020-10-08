@@ -45,16 +45,3 @@ links = [['https://yadi.sk/d/pN4VURbpttmJnw', 'https://yadi.sk/i/xCbt-CkKMutgIA'
           'https://yadi.sk/d/q31yGV_IY_rQ0w'],
          ['https://yadi.sk/d/AcaBFD147xX3Ig']
         ]
-
-# Логирование
-# logging.basicConfig(level=logging.INFO)
-#
-# bot = Bot(token=token)
-# dp = Dispatcher(bot)
-#
-# # Ваш айди аккаунта администратора и айди сообщения где хранится файл с данными
-# admin_id=12345678
-# config_id=12345
-#
-# conn = sqlite3.connect(":memory:")  # настройки in memory бд
-# cursor = conn.cursor()
