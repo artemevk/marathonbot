@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[ ]:
 
 
 import os
@@ -13,7 +13,7 @@ import bot_settings as bs
 import telepot
 
 
-# In[2]:
+# In[ ]:
 
 
 def get_file_name(url):
@@ -85,7 +85,7 @@ def check_start_marathon(start_day=bs.start_day, send_hour=bs.send_hour):
     return marathon_started
 
 
-# In[3]:
+# In[ ]:
 
 
 # Проверка данных
@@ -101,11 +101,15 @@ else:
     print('Данные в порядке!')
 
 
-# In[4]:
+# In[ ]:
 
 
 # Создание экземпляра бота
 bot = telepot.Bot(bs.token)
+
+# Создание папки data
+if not os.path.exists('data'):
+    os.makedirs('data')
 
 files_list = [] # Список файлов на отправку
 
@@ -140,7 +144,7 @@ prev_hour = 99
 
 readiness = False # флаг работы бота (False - бот не работает)
 
-# md = -3 # раскомментировать для тестирования
+# md = -1 # раскомментировать для тестирования
 # h = 0 # раскомментировать для тестирования
 
 while total_days + 3 == len(bs.links):
@@ -215,10 +219,4 @@ while total_days + 3 == len(bs.links):
 #             h = 0 # раскомментировать для тестирования
 #             md += 1  # раскомментировать для тестирования
 #             time.sleep(5) # раскомментировать для тестирования
-
-
-# In[ ]:
-
-
-
 
