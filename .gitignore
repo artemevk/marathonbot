@@ -1,2 +1,7 @@
 # Project exclude paths
 /venv/
+/data/day_0_msg_1.txt
+/data/day_0_msg_2.mov
+/data/day_0_msg_3.txt
+/data/day_0_msg_4_Стань_лучшей_версией_себя.pdf
+/.ipynb_checkpoints/
