@@ -184,8 +184,8 @@ while total_days + 3 == len(bs.links):
     if (hour != prev_hour):
         prev_hour = hour
         
-#         marathon_day = calc_days_from_start() + 1 # закомментировать для тестирования
-        marathon_day = calc_days_from_start(bs.start_day, my_time) + 1  # раскомментировать для тестирования
+        marathon_day = calc_days_from_start() + 1 # закомментировать для тестирования
+#         marathon_day = calc_days_from_start(bs.start_day, my_time) + 1  # раскомментировать для тестирования
     
         print('marathon_day=', marathon_day, ', hour=', hour, sep='')
     
