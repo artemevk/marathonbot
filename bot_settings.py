@@ -12,13 +12,13 @@ owner_id = 242076979
 chat_id = -1001480357109
 
 # День начала марафона
-start_day = '10.10.2020'
+start_day = '11.10.2020'
 
 # День окончания марафона
-finish_day = '13.10.2020'
+finish_day = '14.10.2020'
 
 # Час отправки сообщений в чат
-send_hour = 6
+send_hour = 10
 
 # Ссылки на материалы - (одна ссылка = один день)
 links = [['https://yadi.sk/d/pN4VURbpttmJnw', 'https://yadi.sk/i/xCbt-CkKMutgIA', 
