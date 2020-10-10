@@ -49,25 +49,27 @@ def calc_days_from_start(start_day=bs.start_day, *m_time):
 
     days_from_start = datetime(*structTime[:6]).date() - datetime.strptime(start_day, '%d.%m.%Y').date()
     days_from_start = days_from_start.days
-    days_from_start
     print('{}: день марафона: {}'.format(datetime.today(), days_from_start + 1))
     return days_from_start
 
 
 def send_message_to_tlg(file):
     """Отправка сообщений в телеграмм"""
+    bot = telepot.Bot(bs.token)
     with open(os.path.join('data', file), 'r') as txt:
         bot.sendMessage(bs.chat_id, txt.read())
 
         
 def send_video_to_tlg(file):
     """Отправка видео в телеграмм"""
+    bot = telepot.Bot(bs.token)
     with open(os.path.join('data', file), 'rb') as mov:
         bot.sendVideo(bs.chat_id, mov, width=20, height=11)
         
         
 def send_doc_to_tlg(file):
     """Отправка фалов в телеграмм"""
+    bot = telepot.Bot(bs.token)
     with open(os.path.join('data', file), 'rb') as doc:
         bot.sendDocument(bs.chat_id, doc)
 
@@ -75,13 +77,13 @@ def send_doc_to_tlg(file):
 def send_data_to_tlg(file_name):
     file_extension = file_name.split('.')[1] # расширение файла
     if file_extension == 'txt':
-        send_message_to_tlg(file_name) # закомментировать для тестирования
+        send_message_to_tlg(file_name)
         print('{}: send text {}'.format(datetime.today(), file_name))
     elif file_extension == 'mov':
-        send_video_to_tlg(file_name) # закомментировать для тестирования
+        send_video_to_tlg(file_name)
         print('{}: send video {}'.format(datetime.today(), file_name))
     else:
-        send_doc_to_tlg(file_name) # закомментировать для тестирования
+        send_doc_to_tlg(file_name)
         print('{}: send doc {}'.format(datetime.today(), file_name))
 
         
@@ -157,7 +159,7 @@ else:
 files_list = []
 
 
-# In[7]:
+# In[6]:
 
 
 prev_day = 99
@@ -222,12 +224,15 @@ while total_days + 3 == len(bs.links):
             if hour == bs.send_hour:
                 print('\n{}: начинаю отправку сообщений\n'.format(datetime.today()))
                 for file_name in files_list:
-                    send_data_to_tlg(file_name)
+                    if file_name != 'day_П_msg_1.txt':
+                        send_data_to_tlg(file_name)
+                        
+                    else:
+                        print('\n{}: Congrats! Marathon is over.'.format(datetime.today()))
+                        break
                 print('\n{}: сообщения отправлены\n'.format(datetime.today()))
                 
-                if file_name == 'day_П_msg_1.txt':
-                    print('\n{}: Congrats! Marathon is over.'.format(datetime.today()))
-                
+
                 files_list = []
 
         print(files_list)    
@@ -236,9 +241,13 @@ while total_days + 3 == len(bs.links):
             break
             
             
-        # Для того, чтобы не падало соединение в каждом цикле запрашивается информация о боте и программа останавливается на 60 секунд
-        bot.getMe()
-        time.sleep(60)
+    # Для того, чтобы не падало соединение в каждом цикле запрашивается информация о боте 
+    # и программа останавливается на 60 секунд
+    try: # закомментировать для тестирования
+        print(bot.getMe()) # закомментировать для тестирования
+        time.sleep(60) # закомментировать для тестирования
+    except: # закомментировать для тестирования
+        bot = telepot.Bot(bs.token) # закомментировать для тестирования
             
             
 #     my_time += 0.05 # раскомментировать для тестирования
